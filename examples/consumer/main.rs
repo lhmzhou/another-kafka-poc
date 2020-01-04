@@ -16,5 +16,14 @@ fn main(){
 
 
 async fn consume_messages(group: String, topic: String, brokers: Vec<String>) -> Result<(), Error> {
+    let mut consumer = Consumer::from_hosts(brokers)
+        .with_topic(topic)
+        .with_group(group)
+        .with_fallback_offset(FetchOffset::Earliest)
+        .with_offset_storage(GroupOffsetStorage::Kafka)
+        .create().await?;
+    
     // add code here to customize the consumer behavior 
+
+
 }
