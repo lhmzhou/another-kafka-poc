@@ -1,0 +1,8 @@
+---
+  producer:
+    broker: localhost:8089
+    topic: test
+
+  consumer:
+    broker: localhost:8089
+    topic: pipe
