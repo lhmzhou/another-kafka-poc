@@ -1,0 +1,8 @@
+[package]
+name = "another_kafka_poc"
+version = "0.1.0"
+authors = ["linda <lhmzhou@gmail.com>"]
+
+[dependencies]
+kafka = "0.7"
+yaml-rust = "0.4"
