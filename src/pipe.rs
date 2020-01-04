@@ -23,6 +23,7 @@ pub fn pipe_messages<'a>(consumer_topic: String, consumer_brokers: Vec<String>, 
             .with_fallback_offset(FetchOffset::Earliest)
             .with_offset_storage(GroupOffsetStorage::Kafka)
             .create()
+            // .expect("Producer creation error")
     );
 
     loop {
@@ -31,6 +32,7 @@ pub fn pipe_messages<'a>(consumer_topic: String, consumer_brokers: Vec<String>, 
         for ms in mss.iter() {
             for m in ms.messages() {
                 let msg = str::from_utf8(&m.value).unwrap();
+                // let payload = event.write_to_bytes().unwrap();
 
                 // do stuff to received data here
                 println!("{}", msg);
@@ -39,6 +41,8 @@ pub fn pipe_messages<'a>(consumer_topic: String, consumer_brokers: Vec<String>, 
                     topic: producer_topic,
                     partition: -1,
                     key: (),
+                    // payload: Some(&payload),
+                    // timestamp: None,
                     value: msg,
                 }));
             }

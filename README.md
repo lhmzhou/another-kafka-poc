@@ -2,15 +2,13 @@
 
 ### Install Dependencies
 `cargo install`
-<br/><br/>
 
-### Run the POC
+### Run the PoC
 `cargo run`
-<br/><br/>
 
 ### Cargo Setup Behind Network Proxy
 `vim ~/.cargo/config`
-<br/><br/>
+</br>
 
 Copy and paste the following proxy configuration into your cargo/config file to enable your rust installation to download dependencies behind a proxy.
 
@@ -20,7 +18,6 @@ proxy = "http://localhost:8089"   # HTTP proxy to use for HTTP requests (default
                                   # in libcurl format, e.g. "socks5h://host:port"
 timeout = 60000                   # Timeout for each HTTP request, in milliseconds
 ```
-<br/><br/>
 
 ### Rust Installation
 https://www.rust-lang.org/en-US/install.html
