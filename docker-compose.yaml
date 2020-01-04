@@ -1,0 +1,13 @@
+version: '1'
+
+services:
+  kafka:
+    image: confluentinc/cp-kafka:${CONFLUENT_VERSION:-5.3.1}
+    environment:
+      KAFKA_BROKER_ID: 0
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://localhost:8089
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+      KAFKA_NUM_PARTITIONS: 3
+      CONFLUENT_SUPPORT_METRICS_ENABLE: 0
+    ports: ["8088":8088"]
+

@@ -23,7 +23,6 @@ timeout = 60000                   # Timeout for each HTTP request, in millisecon
 ```
 <br/><br/>
 
-
 ### Rust Installation
 https://www.rust-lang.org/en-US/install.html
 
