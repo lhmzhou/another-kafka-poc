@@ -2,6 +2,8 @@ extern crate kafka;
 
 use std::str;
 use std::time::Duration;
+use std::default::Default;
+use std::io::{Read, Write, self};
 
 use kafka::producer::{Producer, Record, RequiredAcks};
 use kafka::consumer::{Consumer, FetchOffset, GroupOffsetStorage};
